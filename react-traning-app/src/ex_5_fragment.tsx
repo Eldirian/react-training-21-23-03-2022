@@ -1,7 +1,7 @@
-// import React from 'react'; // w wersji React 17 nie jest już potrzebne, ale wcześniej tak
+import { Fragment } from "react"
 
 const App = () => {
-    return <>
+    return <Fragment>
         <header>
             <h1>Hello</h1>
         </header>
@@ -9,7 +9,7 @@ const App = () => {
             <h2>Lorem ipsum</h2>
             <div>Hello world</div>
         </section>
-        </>
+        </Fragment>
     }
 
 export {App}
