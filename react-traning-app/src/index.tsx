@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { App } from './react_calculator_history/App';
+import { App } from './ex_15_hierarchy_callbacks/App';
 
 
 ReactDOM.render(
