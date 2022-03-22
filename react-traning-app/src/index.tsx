@@ -1,7 +1,5 @@
 import ReactDOM from 'react-dom';
-import { App } from './ex_13_counter/App';
-
-
+import { App } from './react_calculator_history/App';
 
 
 ReactDOM.render(
