@@ -22,7 +22,7 @@ const Calculator = ({a, b, operation}: Props) => {
         const operationResult = getResult();
         addToHistory(operationResult);
         setResult(operationResult);
-    }, []);
+    }, [a, b, operation]); // useEffect będzie się wywoływać dla każdej zmiany a, b lub operation
 
     const addToHistory = (line: string) => {
         setHistory(prevHistory => [...prevHistory, line]);
