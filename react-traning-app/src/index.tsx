@@ -1,5 +1,7 @@
 import ReactDOM from 'react-dom';
-import { App } from './ex_10_conditional_rendering/App';
+import { App } from './ex_13_counter/App';
+
+
 
 
 ReactDOM.render(
