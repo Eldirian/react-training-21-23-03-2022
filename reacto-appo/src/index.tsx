@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
-import { AppCalc , Operation} from './Calc/CalcComp';
+import { App } from './BooksAPI/App';
 
 ReactDOM.render(
-  <AppCalc number1={20} number2= {30} operationType= {Operation.ADD} />,
+  <App/>,
   document.getElementById('root')
 );
