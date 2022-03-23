@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { App } from './react_calculator_with_separate_history/App';
+import { App } from './ex_19_basic_context/App';
 
 ReactDOM.render(
   <App />,
