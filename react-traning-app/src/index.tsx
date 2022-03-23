@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { App } from './ex_18_basic_fetch/App';
+import { App } from './react_calculator_with_input/App';
 
 ReactDOM.render(
   <App />,
