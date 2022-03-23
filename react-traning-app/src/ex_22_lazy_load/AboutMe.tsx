@@ -1,5 +1,7 @@
+import './AboutMe.css';
+
 const AboutMe = () => {
-    return <p>Something about me</p>
+    return <p className='about-me'>Something about me</p>
 }
 
 export default AboutMe;
