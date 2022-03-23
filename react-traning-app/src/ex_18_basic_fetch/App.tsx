@@ -15,7 +15,13 @@ const App = () => {
     const getMyIp = async() => {
         setLoading(true);
         try {
-            const response = await fetch('https://api.ipify.org?format=json');
+            const response = await fetch('https://api.ipify.org?format=json', {
+                method: 'GET', // DELETE, POST, PUT, PATCH
+                // body: JSON.stringify({}), // payload zapytania
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
             const data: IPResponse = await response.json();
             setResult(data);
         } catch(e) {
