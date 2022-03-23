@@ -1,13 +1,9 @@
 import { OperationsHistory } from "./OperationsHistory"
 
-interface Props {
-    history: string[]
-}
-
-const CalculatorHistory = ({history}: Props) => {
+const CalculatorHistory = () => {
     return <div> 
         <h2>Historia operacji</h2>
-        <OperationsHistory history={history} />
+        <OperationsHistory />
     </div>
 }
 

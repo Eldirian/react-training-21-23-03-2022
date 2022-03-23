@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { CalculatorActions } from "./CalculatorActions";
 import { CalculatorHistory } from "./CalculatorHistory";
 import { CalculatorInputs } from "./CalculatorInputs";
@@ -11,9 +11,25 @@ enum Operation {
 }
 
 export interface FormValues {
-    a: number,
-    b: number
+    a: number;
+    b: number;
 }
+
+interface CalculatorContextState {
+    history: string[];
+    values: FormValues;
+    onInputChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    calculate?: (operation: Operation) => void;
+    clearHistory?: () => void;
+}
+
+const CalculatorContext = React.createContext<CalculatorContextState>({
+    history: [],
+    values: {
+        a: 0,
+        b: 0
+    }
+})
 
 const Calculator = () => {
     const [history, setHistory] = useState<string[]>([]);
@@ -58,12 +74,18 @@ const Calculator = () => {
         }
     }
 
-    return <>
-            <CalculatorInputs onInputChange={handleInputChange} values={values} />
-            <CalculatorActions calculate={calculate} clearHistory={clearHistory} />
+    return <CalculatorContext.Provider value={{
+        history,
+        values,
+        calculate,
+        clearHistory,
+        onInputChange: handleInputChange
+    }}>
+            <CalculatorInputs />
+            <CalculatorActions />
             <h1>{result}</h1>
-            <CalculatorHistory history={history} />
-        </>
+            <CalculatorHistory />
+        </CalculatorContext.Provider>
 }
 
-export { Calculator, Operation }
+export { Calculator, Operation, CalculatorContext }
