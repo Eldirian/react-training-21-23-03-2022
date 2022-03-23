@@ -9,8 +9,23 @@ const App = () => {
     const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
-        getMyIp();
+        runInParallel();
+        runInOrder();
     }, [])
+
+    const runInParallel = () => {
+        console.log('START PARALLEL');
+        getMyIp();
+        getMyIpInPlainText();
+        console.log('READY PARRALEL');
+    }
+
+    const runInOrder = async() => {
+        console.log('START IN ORDER');
+        await getMyIp();
+        await getMyIpInPlainText();
+        console.log('READY IN ORDER');
+    }
 
     const getMyIp = async() => {
         setLoading(true);
@@ -23,11 +38,26 @@ const App = () => {
                 }
             });
             const data: IPResponse = await response.json();
+            console.log('GOT DATA 1', data);
             setResult(data);
         } catch(e) {
             setResult(undefined);
         }
         setLoading(false);
+    }
+
+    const getMyIpInPlainText = async() => {
+        try {
+            const response = await fetch('https://api.ipify.org', {
+                method: 'GET', // DELETE, POST, PUT, PATCH
+            });
+            const data = await response.text();
+            console.log('GOT DATA 2', data);
+
+        } catch(e) {
+
+        }
+
     }
 
     if(loading) return <h1>Trwa ładowanie danych, proszę poczekać.</h1>
