@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { App } from './react_calculator_with_input/App';
+import { App } from './books_api/App';
 
 ReactDOM.render(
   <App />,
