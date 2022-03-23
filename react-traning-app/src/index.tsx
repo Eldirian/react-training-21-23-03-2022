@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { App } from './ex_18_basic_fetch/App';
+import { App } from './books_api/App';
 
 ReactDOM.render(
   <App />,
