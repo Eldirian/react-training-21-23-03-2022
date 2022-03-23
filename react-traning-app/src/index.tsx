@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { App } from './ex_20_redux_toolkit/App';
+import { App } from './react_calculator_with_global_state/App';
 
 ReactDOM.render(
   <App />,
