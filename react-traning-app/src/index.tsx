@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { App } from './ex_22_lazy_load/App';
+import { App } from './books_api_with_routing/App';
 
 ReactDOM.render(
   <App />,
