@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
-import { App } from './books_api/App';
+import { App } from './ex_20_redux_toolkit/App';
 
 ReactDOM.render(
   <App />,
   document.getElementById('root')
-);
+)
