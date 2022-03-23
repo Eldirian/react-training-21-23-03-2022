@@ -4,4 +4,4 @@ const App = () => {
     return <Calculator />
 }
 
-export {App}
+export { App }
